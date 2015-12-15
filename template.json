@@ -28,7 +28,9 @@
         "source_ami": "ami-60b6c60a",
         "instance_type": "t2.micro",
         "ssh_username": "ec2-user",
-        "ami_name": "kelner-atlas-packer-{{timestamp}}"
+        "ami_name": "kelner-atlas-packer-{{timestamp}}",
+        "subnet_id": "subnet-cc8fdbbb",
+        "vpc_id": "vpc-c16d68a4"
       }
     ],
     "post-processors": [
