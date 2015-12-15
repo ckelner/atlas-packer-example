@@ -5,7 +5,9 @@
     },
     "variables": {
         "atlas_username": "{{env `ATLAS_USERNAME`}}",
-        "atlas_name": "{{env `ATLAS_NAME`}}"
+        "atlas_name": "{{env `ATLAS_NAME`}}",
+        "access_key": "{{env `AWS_ACCESS_KEY`}}",
+        "secret_key": "{{env `AWS_SECRET_KEY`}}"
     },
     "provisioners": [
         {
@@ -20,8 +22,8 @@
     "builders": [
       {
         "type": "amazon-ebs",
-        "access_key": "{{env `AWS_ACCESS_KEY`}}",
-        "secret_key": "{{env `AWS_SECRET_KEY`}}",
+        "access_key": "{{user `access_key`}}",
+        "secret_key": "{{user `secret_key`}}",
         "region": "us-east-1",
         "source_ami": "ami-60b6c60a",
         "instance_type": "t2.micro",
